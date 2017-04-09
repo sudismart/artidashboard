@@ -1,0 +1,219 @@
+<div class="row dashboard-container">
+
+    <div class="col-sm-2 col-md-1 side-bar" ng-class="{'col-xs-2':showMenu, ' hidden-xs':!showMenu}">
+        <div class="text-center">
+            <img id="szlogo" src="../images/sz.png" alt="seller zone"/>
+        </div>
+        <div class="menu-items text-center active">
+            <div ><i class="fa fa-dashboard fa-2x"></i></div>
+            <div class="menu-text">DASHBOARD</div>
+        </div>
+        <div class="menu-items text-center">
+            <div ><i class="fa  fa-calendar-o  fa-2x"></i></div>
+            <div class="menu-text">CATALOGS</div>
+        </div>
+        <div class="menu-items text-center">
+            <div ><i class="fa  fa-credit-card  fa-2x"></i></div>
+            <div class="menu-text">PAYMENTS</div>
+        </div>
+        <div class="menu-items text-center">
+            <div><i class="fa  fa-files-o fa-2x"></i></div>
+            <div class="menu-text">ORDERS</div>
+        </div>
+        <div class="menu-items text-center">
+            <div><i class="fa  fa-mail-reply fa-2x"></i></div>
+            <div class="menu-text">RETURNS</div>
+        </div>
+        <div class="menu-items text-center">
+            <div><i class="fa fa-cog fa-2x"></i></div>
+            <div class="menu-text">SETTING</div>
+        </div>
+    </div>
+    <div class="col-sm-10 col-md-11 no-padding section" ng-class="{'col-xs-10':showMenu ,'col-xs-12':!showMenu  }">
+
+        <div id="dashboard-header">
+            <div class="visible-xs " ng-init="showMenu = false">
+                <span id="nav-toggle-link">
+                    <i class="fa fa-bars fa-2x" ng-click="showMenu = !showMenu"></i>
+                </span>
+            </div>
+
+            <div id="header-search" class="inner-addon left-addon">
+                <i class="glyphicon glyphicon-search"></i>
+                <input type="text" placeholder="Search here.."  height="40"/>
+            </div>
+
+            <div id="nav-user">
+                <div class="pull-left">
+                    <img src="../images/avatar.png" alt="user"/>
+                </div>
+                <div class="pull-left">
+                    Welcome Padam !
+                </div>
+                <span><i class="fa fa-caret-down"></i></span>
+
+            </div>
+
+            <div id="nav-bell">
+                <span><i class="fa fa-bell fa-2x"></i></span>
+                <span class="badge custom-badge">2</span>
+            </div>
+        </div>
+        <div class="container-fluid"  id="dashboard-activity">
+            <div class="col-xs-6 col-sm-4 col-md-2 activity-card">
+                <p>12</p>
+                <p>PENDING ACTION &nbsp; <span><i class="fa fa-caret-right"></i></span></p>
+            </div>
+            <div class=" col-xs-6 col-sm-4 col-md-2 activity-card">
+                <p>31</p>
+                <p>PENDING SHIPMENT &nbsp; <span><i class="fa fa-caret-right"></i></span></p>
+            </div>
+            <div class="col-xs-6 col-sm-4 col-md-3 activity-card">
+                <p>12</p>
+                <p>OVERALL SLA BREACH &nbsp; <span><i class="fa fa-caret-right"></i></span></p>
+            </div>
+            <div class="col-xs-6 visible-xs activity-card">
+                <p>230</p>
+                <p>REVIEWS &nbsp; <span><i class="fa fa-caret-right"></i></span></p>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3 activity-card">
+                <p><span >Your Overall Rating</span></p>
+                <p><span id="rating-point">4.1</span>&nbsp; <span id="rating-star" uib-rating ng-model="dashCtrl.rate" max="5" read-only="true" ></span></p>
+            </div>
+            <div class="hidden-xs col-sm-6 col-md-2 activity-card text-center">
+                <p></p>
+                <p>230 REVIEWS&nbsp; <span><i class="fa fa-caret-right"></i></span></p>
+            </div>
+        </div>
+        <div id="overall-summary" class="container-fluid">
+            <div class="col-xs-12  col-md-4 midium-font">
+                Overall Summary
+            </div>
+            <div class="col-xs-12 col-md-8 sort-section">
+                <div >
+                    <span >Sort by:</span>
+                </div>
+                <div class="col-xs-4">
+                    <div class="btn-group btn-group-justified sort-option">
+                        <a href="#" class="btn  btn-default">Week</a>
+                        <a href="#" class="btn  btn-default">Month</a>
+                    </div>
+                </div>
+
+                <div class="col-xs-6 no-padding  date-picker ">
+                    <input type="date" name="startday"> &nbsp; to&nbsp;
+                    <input type="date" name="endday">
+                </div>
+
+            </div>
+            <div class="col-xs-6 col-sm-4 col-md-2">
+                <div class="summary-block">
+                    <div class="summary-block-header">
+                        GMV
+                    </div>
+
+                    <div>
+                        <p>7,50,420</p>
+                        <p><span><i class="fa fa-caret-up"></i></span> 5.6%</p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-xs-6 col-sm-4 col-md-2">
+                <div class="summary-block">
+                    <div class="summary-block-header">
+                        Total Item Sold
+                    </div>
+
+                    <div>
+                        <p>6,504</p>
+                        <p><span><i class="fa fa-caret-up"></i></span> 5.6%</p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-xs-6 col-sm-4 col-md-2">
+                <div class="summary-block">
+                    <div class="summary-block-header">
+                       Seller Cancelltion
+                    </div>
+
+                    <div>
+                        <p>43</p>
+                        <p><span><i class="fa fa-caret-down"></i></span> 5.6%</p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-xs-6 col-sm-4 col-md-2">
+                <div class="summary-block">
+                    <div class="summary-block-header">
+                        User Cancellation
+                    </div>
+
+                    <div>
+                        <p>7,50,420</p>
+                        <p><span><i class="fa fa-caret-up"></i></span> 5.6%</p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-xs-6 col-sm-4 col-md-2">
+                <div class="summary-block">
+                    <div class="summary-block-header">
+                        Shippment SLA & Breach
+                    </div>
+
+                    <div>
+                        <p>7,50,420</p>
+                        <p><span><i class="fa fa-caret-down"></i></span> 5.6%</p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-xs-6 col-sm-4 col-md-2 ">
+                <div class="summary-block">
+                        <div class="summary-block-header">
+                        Out of Stock index
+                    </div>
+
+                    <div>
+                        <p>7,50,420</p>
+                        <p><span><i class="fa fa-caret-up"></i></span> 5.6%</p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-xs-12" id="chart-container">
+                <div class="col-xs-12 col-md-3 midium-font">
+                    Sales Trends
+                </div>
+                <div class="col-xs-6 col-md-3 col-md-offset-3">
+                    <select class="form-control">
+                        <option>Electronics</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                    </select>
+                </div>
+                <div class="col-xs-6 col-md-3">
+                    <select class="form-control">
+                        <option>Gaming</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                    </select>
+                </div>
+                <canvas id="line" class="chart chart-line" chart-data="dashCtrl.data"
+                        chart-labels="dashCtrl.labels" chart-series="dashCtrl.series" chart-options="dashCtrl.options"
+                        chart-dataset-override="dashCtrl.datasetOverride" chart-click="dashCtrl.onClick">
+                </canvas>
+            </div>
+            <!--<div id="summary-block-container" class="col-xs-12">-->
+                <!-- -->
+            <!--</div>-->
+        </div>
+
+
+    </div>
+</div>
